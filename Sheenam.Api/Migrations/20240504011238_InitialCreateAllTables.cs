@@ -1,6 +1,6 @@
 ﻿//===================================================
 // Copyright(c) Coalition of Good-Hearted Engineers
-// Free To Use
+// Free To Use ! For Peace
 //===================================================
 
 using System;

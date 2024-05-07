@@ -1,6 +1,6 @@
 ﻿//==================================================
 // Copyright (c) Coalition Of Good-Hearted Engineers
-// Free To Use 
+// Free To Use ! For Peace 
 //==================================================
 
 using ADotNet.Clients;
