@@ -3,7 +3,6 @@
 // Free To Use ! For Peace
 //===================================================
 
-
 using Sheenam.Api.Brokers.Storages;
 using Sheenam.Api.Models.Foundations.Guest;
 using System;
@@ -18,7 +17,7 @@ namespace Sheenam.Api.Service.Foundations.Guests
         public GuestService(IStorageBroker storageBroker) =>
             this.storageBroker = storageBroker;
         public async ValueTask<Guest> AddGuestAsync(Guest guest) =>
-            throw new NotImplementedException();
+            await this.storageBroker.InsertGuestsAsync(guest);
             
     }
 }
