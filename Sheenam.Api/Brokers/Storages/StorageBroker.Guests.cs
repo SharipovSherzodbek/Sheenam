@@ -5,7 +5,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Sheenam.Api.Models.Foundations.Guests;
+using Sheenam.Api.Models.Foundations.Guest;
 using System.Threading.Tasks;
 namespace Sheenam.Api.Models.Foundations.Guests;
 

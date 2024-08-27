@@ -1,4 +1,4 @@
-﻿using Sheenam.Api.Models.Foundations.Guests;
+﻿using Sheenam.Api.Models.Foundations.Guest;
 using System.Threading.Tasks;
 
 namespace Sheenam.Api.Brokers.Storages
