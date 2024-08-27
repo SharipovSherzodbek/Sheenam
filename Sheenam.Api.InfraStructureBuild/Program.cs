@@ -74,7 +74,7 @@ var githubPipeline = new GithubPipeline
         }
     }
 };
-
+//
 string buildScriptPath = "../../../../.github/workflows/dotnet.yml";
 string absoluteBuildScriptPath = Path.GetFullPath(buildScriptPath);
 string directoryPath = Path.GetDirectoryName(absoluteBuildScriptPath);
