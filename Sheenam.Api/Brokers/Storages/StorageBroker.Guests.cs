@@ -12,13 +12,13 @@ namespace Sheenam.Api.Brokers.Storages
 {
     public partial class StorageBroker
     {
-        public DbSet <Guests> Guests { get; set; }
+        public DbSet <Guest> Guests { get; set; }
 
-        public async ValueTask<Guests> InsertGuestsAsync(Guests guests) 
+        public async ValueTask<Guest> InsertGuestsAsync(Guest guests) 
         {
             using var broker = new StorageBroker(this.configuration);
 
-            EntityEntry<Guests> guestEntityEntry =
+            EntityEntry<Guest> guestEntityEntry =
                 await broker.Guests.AddAsync(guests);
 
             await broker.SaveChangesAsync();

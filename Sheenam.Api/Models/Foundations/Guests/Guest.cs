@@ -8,7 +8,7 @@ using System;
 
 namespace Sheenam.Api.Models.Foundations.Guests
 {
-    public class Guests
+    public class Guest
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
