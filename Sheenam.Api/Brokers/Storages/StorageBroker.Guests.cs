@@ -3,19 +3,19 @@
 // Free To Use ! For Peace
 //===================================================
 
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Sheenam.Api.Models.Foundations.Guests;
-using System.Threading.Tasks;
 
 
 namespace Sheenam.Api.Brokers.Storages
 {
     public partial class StorageBroker
     {
-        public DbSet <Guest> Guests { get; set; }
+        public DbSet<Guest> Guests { get; set; }
 
-        public async ValueTask<Guest> InsertGuestsAsync(Guest guests) 
+        public async ValueTask<Guest> InsertGuestsAsync(Guest guests)
         {
             using var broker = new StorageBroker(this.configuration);
 

@@ -21,7 +21,7 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
                 new GuestValidationException(nullGuestException);
 
             //when
-            ValueTask<Guest>addGuestTask = this.guestServiceMock.AddGuestAsync(nullGuest);
+            ValueTask<Guest> addGuestTask = this.guestServiceMock.AddGuestAsync(nullGuest);
 
 
             //then

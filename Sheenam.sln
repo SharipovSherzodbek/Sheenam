@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sheenam.Api", "Sheenam.Api\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sheensm.APi.Tests.Unit", "Sheensm.APi.Tests.Unit\Sheensm.APi.Tests.Unit.csproj", "{63189B4D-D7EE-451C-9947-96891FFC29D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheenam.Api.InfraStructureBuild", "Sheenam.Api.InfraStructureBuild\Sheenam.Api.InfraStructureBuild.csproj", "{89EC8FB3-777C-4CAE-9ADC-DFBA0050A7EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sheenam.Api.InfraStructureBuild", "Sheenam.Api.InfraStructureBuild\Sheenam.Api.InfraStructureBuild.csproj", "{89EC8FB3-777C-4CAE-9ADC-DFBA0050A7EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

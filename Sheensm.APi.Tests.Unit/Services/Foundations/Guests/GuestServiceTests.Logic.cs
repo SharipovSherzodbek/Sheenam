@@ -3,18 +3,16 @@
 // Free To Use ! For Peace
 //===================================================
 
-using System.Threading.Tasks;
 using FluentAssertions;
 using Force.DeepCloner;
 using Moq;
 using Sheenam.Api.Models.Foundations.Guests;
-using Xunit;
 
 namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
 {
     public partial class GuestServiceTests
     {
-        
+
         [Fact]
 
         public async Task ShouldAddGuestAsync()
@@ -36,7 +34,7 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
             //then
             actualGuest.Should().BeEquivalentTo(expectedGuest);
 
-            this.storageBrokerMock.Verify(broker => 
+            this.storageBrokerMock.Verify(broker =>
                 broker.InsertGuestsAsync(inputGuest), Times.Once());
 
             this.storageBrokerMock.VerifyNoOtherCalls();

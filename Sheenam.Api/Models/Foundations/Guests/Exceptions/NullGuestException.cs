@@ -4,7 +4,6 @@
 //===================================================
 
 
-using System;
 using Xeptions;
 
 namespace Sheenam.Api.Models.Foundations.Guests.Exceptions
@@ -14,7 +13,7 @@ namespace Sheenam.Api.Models.Foundations.Guests.Exceptions
         public NullGuestException()
             : base(message: "Guest is null")
         {
-            
+
         }
     }
 }

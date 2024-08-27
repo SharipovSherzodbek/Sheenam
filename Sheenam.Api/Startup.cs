@@ -18,7 +18,7 @@ namespace Sheenam.Api
     {
         public Startup(IConfiguration configuration) =>
             Configuration = configuration;
-       
+
 
         public IConfiguration Configuration { get; }
 
@@ -59,7 +59,7 @@ namespace Sheenam.Api
             app.UseRouting();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => 
+            app.UseEndpoints(endpoints =>
                 endpoints.MapControllers());
             Console.WriteLine("");
         }
