@@ -4,7 +4,7 @@
 //===================================================
 
 
-namespace Sheenam.Api.Models.Foundations.Guests
+namespace Sheenam.Api.Models.Foundations.Guest
 {
     public enum GenderType
     {

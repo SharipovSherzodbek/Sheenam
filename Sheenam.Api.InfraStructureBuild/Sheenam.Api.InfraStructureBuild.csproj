@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="ADotNet" Version="3.0.2" />
+    <PackageReference Include="DeepCloner" Version="0.10.4" />
   </ItemGroup>
 
 </Project>

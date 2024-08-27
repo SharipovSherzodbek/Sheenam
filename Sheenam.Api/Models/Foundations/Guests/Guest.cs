@@ -1,14 +1,14 @@
 ﻿//===================================================
 // Copyright(c) Coalition of Good-Hearted Engineers
-// Free To Use
+// Free To Use ! For Peace
 //===================================================
 
 
 using System;
 
-namespace Sheenam.Api.Models.Foundations.Guests
+namespace Sheenam.Api.Models.Foundations.Guest
 {
-    public class Guests
+    public class Guest
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
