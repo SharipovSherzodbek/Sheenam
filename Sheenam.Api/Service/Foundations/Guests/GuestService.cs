@@ -4,7 +4,7 @@
 //===================================================
 
 using Sheenam.Api.Brokers.Storages;
-using Sheenam.Api.Models.Foundations.Guest;
+using Sheenam.Api.Models.Foundations.Guests;
 using System;
 using System.Threading.Tasks;
 
