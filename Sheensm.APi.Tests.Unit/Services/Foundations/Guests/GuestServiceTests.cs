@@ -7,7 +7,7 @@
 using FluentAssertions;
 using Moq;
 using Sheenam.Api.Brokers.Storages;
-using Sheenam.Api.Models.Foundations.Guest;
+using Sheenam.Api.Models.Foundations.Guests;
 using Sheenam.Api.Service.Foundations.Guests;
 using System.ComponentModel.DataAnnotations;
 using Tynamix.ObjectFiller;

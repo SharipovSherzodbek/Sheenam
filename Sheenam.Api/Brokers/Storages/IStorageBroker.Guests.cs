@@ -1,11 +1,11 @@
-﻿using Sheenam.Api.Models.Foundations.Guest;
+﻿using Sheenam.Api.Models.Foundations.Guests;
 using System.Threading.Tasks;
 
-namespace Sheenam.Api.Brokers.Storages
+namespace Sheenam.Api.Brokers.Storages;
+
+public partial interface IStorageBroker
 {
-    public partial interface IStorageBroker
-    {
-        //Create //Read //Update //Delete
-        ValueTask <Guest> InsertGuestsAsync (Guest guests);
-    }
+    // Create // Read // Update // Delete
+    ValueTask<Guest> InsertGuestsAsync(Guest guest);
 }
+

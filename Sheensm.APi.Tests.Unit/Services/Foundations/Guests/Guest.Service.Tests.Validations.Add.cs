@@ -3,7 +3,7 @@
 // Free To Use ! For Peace
 //===================================================
 
-using Sheenam.Api.Models.Foundations.Guest;
+using Sheenam.Api.Models.Foundations.Guests;
 using Sheenam.Api.Models.Foundations.Guests.Exceptions;
 
 namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests

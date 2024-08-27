@@ -76,11 +76,12 @@ var githubPipeline = new GithubPipeline
 };
 
 string buildScriptPath = "../../../../.github/workflows/dotnet.yml";
-string directoryPath = Path.GetDirectoryName(buildScriptPath);
+string absoluteBuildScriptPath = Path.GetFullPath(buildScriptPath);
+string directoryPath = Path.GetDirectoryName(absoluteBuildScriptPath);
 
 if (!Directory.Exists(directoryPath))
 {
     Directory.CreateDirectory(directoryPath);
 }
 
-client.SerializeAndWriteToFile(githubPipeline, path: buildScriptPath);
+client.SerializeAndWriteToFile(githubPipeline, path: absoluteBuildScriptPath);
