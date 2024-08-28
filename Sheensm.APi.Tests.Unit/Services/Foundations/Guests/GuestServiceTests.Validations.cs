@@ -11,7 +11,7 @@ namespace Sheensm.APi.Tests.Unit.Services.Foundations.Guests
     public partial class GuestServiceTests
     {
         [Fact]
-        public async Task ShouldThrowValidationExceptionOnAddIfGuestIsNullAndLogItAsync()
+        public async Task houldThrowValidationExceptionOnAddIfGuestIsNullAndLogItAsync()
         {
             //given
             Guest nullGuest = null;
@@ -20,7 +20,7 @@ namespace Sheensm.APi.Tests.Unit.Services.Foundations.Guests
             var expectedGuestValidationException = new GuestValidationException(nullGuestException);
 
             //when
-            ValueTask<Guest> addGuestTask = this.guestService.AddGuestAsync(nullGuest);
+            ValueTask<Guest> addGuestTask = this.guestServiceMock.AddGuestAsync(nullGuest);
 
 
             //then
