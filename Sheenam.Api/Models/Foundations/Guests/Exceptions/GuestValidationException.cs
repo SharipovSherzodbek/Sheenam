@@ -3,7 +3,6 @@
 // Free To Use ! For Peace
 //===================================================
 
-
 using Xeptions;
 
 namespace Sheenam.Api.Models.Foundations.Guests.Exceptions
