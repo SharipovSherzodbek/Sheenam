@@ -29,7 +29,7 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
 
             //when
             Guest actualGuest =
-            await this.guestServiceMock.AddGuestAsync(inputGuest);
+            await this.guestService.AddGuestAsync(inputGuest);
 
             //then
             actualGuest.Should().BeEquivalentTo(expectedGuest);
