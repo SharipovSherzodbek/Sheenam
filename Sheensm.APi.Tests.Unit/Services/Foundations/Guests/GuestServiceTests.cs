@@ -34,23 +34,21 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
         private static Guest CreateRandomGuest() =>
                CreateGuestFiller(date: GetRandomDateTimeOffset()).Create();
 
+        private static string GetRandomEmail() =>
+            new EmailAddresses().GetValue();
+
         private static DateTimeOffset GetRandomDateTimeOffset() =>
             new DateTimeRange(earliestDate: new DateTime()).GetValue();
 
-        private Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedException)
-        {
-            return actualException =>
-            actualException.Message == expectedException.Message
-            && actualException.InnerException.Message == expectedException.InnerException.Message
-            && (actualException.InnerException as Xeption).DataEquals(
-                expectedException.InnerException.Data);
-        }
+        private Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedException) =>
+            actualException => actualException.SameExceptionAs(expectedException);
 
         private static Filler<Guest> CreateGuestFiller(DateTimeOffset date)
         {
             var filler = new Filler<Guest>();
 
             filler.Setup()
+                .OnProperty(guest => guest.Email).Use(GetRandomEmail())
                 .OnType<DateTimeOffset>().Use(date);
 
             return filler;

@@ -4,7 +4,7 @@
 //===================================================
 
 using System;
-using System.Data;
+using System.Text.RegularExpressions;
 using Sheenam.Api.Models.Foundations.Guests;
 using Sheenam.Api.Models.Foundations.Guests.Exceptions;
 
@@ -21,7 +21,7 @@ namespace Sheenam.Api.Service.Foundations.Guests
                 (Rule: IsInvalid(guest.FirstName), Paremeter: nameof(Guest.FirstName)),
                 (Rule: IsInvalid(guest.LastName), Paremeter: nameof(Guest.LastName)),
                 (Rule: IsInvalid(guest.DateOfBirth), Paremeter: nameof(Guest.DateOfBirth)),
-                (Rule: IsInvalid(guest.Email), Paremeter: nameof(Guest.Email)),
+                (Rule: IsEmailInvalid(guest.Email), Paremeter: nameof(Guest.Email)),
                 (Rule: IsInvalid(guest.Address), Paremeter: nameof(Guest.Address))
                 );
         }
@@ -53,23 +53,38 @@ namespace Sheenam.Api.Service.Foundations.Guests
             Message = "Date is required"
         };
 
+        private static dynamic IsEmailInvalid(string email) => new
+        {
+            Condition = !IsValidEmail(email),
+            Message = "Email is not valid"
+        };
+
+        private static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return false;
+            }
+
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(email, emailPattern);
+        }
+
         private static void Validate(params (dynamic Rule, string Parameter)[] validations)
         {
             var invalidGuestException = new InvalidGuestException();
 
-            foreach ((dynamic rule, string parameter) in validations ) 
+            foreach ((dynamic rule, string parameter) in validations)
             {
-                if(rule.Condition)
+                if (rule.Condition)
                 {
                     invalidGuestException.UpsertDataList(
-                        key: parameter, 
+                        key: parameter,
                         value: rule.Message);
                 }
             }
 
             invalidGuestException.ThrowIfContainsErrors();
         }
-
-
     }
 }
