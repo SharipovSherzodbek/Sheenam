@@ -21,7 +21,7 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
     {
         private readonly Mock<IStorageBroker> storageBrokerMock;
         private readonly Mock<ILoggingBroker> loggingBrokerMock;
-        private readonly IGuestService guestService;    
+        private readonly IGuestService guestService;
 
         public GuestServiceTests()
         {
@@ -29,7 +29,7 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
             this.loggingBrokerMock = new Mock<ILoggingBroker>();
 
             this.guestService = new GuestService(
-                storageBroker: this.storageBrokerMock.Object, 
+                storageBroker: this.storageBrokerMock.Object,
                 loggingBroker: this.loggingBrokerMock.Object);
         }
 
@@ -45,6 +45,9 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
         private static int GetRandomNumber() =>
             new IntRange(min: 3, max: 9).GetValue();
 
+        private static string GetRandomString() =>
+            new MnemonicString().GetValue();
+
         private static SqlException GetSqlError() =>
             (SqlException)FormatterServices.GetUninitializedObject(typeof(SqlException));
 
@@ -52,7 +55,7 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
         {
             int randomNumber = GetRandomNumber();
 
-            while(Enum.IsDefined(typeof(T), randomNumber) is true)
+            while (Enum.IsDefined(typeof(T), randomNumber) is true)
             {
                 randomNumber = GetRandomNumber();
             }

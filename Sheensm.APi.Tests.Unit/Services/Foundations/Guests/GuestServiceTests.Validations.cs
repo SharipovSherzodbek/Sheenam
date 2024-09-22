@@ -128,21 +128,21 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
                 key: nameof(Guest.Gender),
                 values: "Value is invalid");
 
-            var expectedGuestValidationException = 
+            var expectedGuestValidationException =
                 new GuestValidationException(invalidGuestException);
             //when
-            ValueTask<Guest> addGuestTask = 
+            ValueTask<Guest> addGuestTask =
                 this.guestService.AddGuestAsync(invalidGuest);
 
-            //then
+            //then //
             await Assert.ThrowsAsync<GuestValidationException>(() =>
                 addGuestTask.AsTask());
 
             this.loggingBrokerMock.Verify(broker =>
                 broker.LogError(It.Is(SameExceptionAs(
-                expectedGuestValidationException))), 
+                expectedGuestValidationException))),
                 Times.Once);
-
+            
             this.storageBrokerMock.Verify(broker =>
                 broker.InsertGuestsAsync(It.IsAny<Guest>()),
                     Times.Never);
