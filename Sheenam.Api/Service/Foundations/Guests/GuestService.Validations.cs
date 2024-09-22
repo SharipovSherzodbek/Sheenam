@@ -4,6 +4,7 @@
 //===================================================
 
 using System;
+using System.Data;
 using System.Text.RegularExpressions;
 using Sheenam.Api.Models.Foundations.Guests;
 using Sheenam.Api.Models.Foundations.Guests.Exceptions;
@@ -22,8 +23,8 @@ namespace Sheenam.Api.Service.Foundations.Guests
                 (Rule: IsInvalid(guest.LastName), Paremeter: nameof(Guest.LastName)),
                 (Rule: IsInvalid(guest.DateOfBirth), Paremeter: nameof(Guest.DateOfBirth)),
                 (Rule: IsEmailInvalid(guest.Email), Paremeter: nameof(Guest.Email)),
-                (Rule: IsInvalid(guest.Address), Paremeter: nameof(Guest.Address))
-                );
+                (Rule: IsInvalid(guest.Address), Paremeter: nameof(Guest.Address)),
+                (Rule: IsInvalid(guest.Gender), Paremeter: nameof(Guest.Gender)));
         }
 
         private void ValidateGuestNotNull(Guest guest)
@@ -52,6 +53,13 @@ namespace Sheenam.Api.Service.Foundations.Guests
             Condition = date == default,
             Message = "Date is required"
         };
+
+        private static dynamic IsInvalid(GenderType gender) => new
+        {
+            Condition = Enum.IsDefined( gender) is false,
+            Message = "Value is invalid"
+        };
+            
 
         private static dynamic IsEmailInvalid(string email) => new
         {
