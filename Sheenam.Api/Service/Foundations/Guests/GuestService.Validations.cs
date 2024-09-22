@@ -56,10 +56,10 @@ namespace Sheenam.Api.Service.Foundations.Guests
 
         private static dynamic IsInvalid(GenderType gender) => new
         {
-            Condition = Enum.IsDefined( gender) is false,
+            Condition = Enum.IsDefined(gender) is false,
             Message = "Value is invalid"
         };
-            
+
 
         private static dynamic IsEmailInvalid(string email) => new
         {

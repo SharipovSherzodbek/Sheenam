@@ -1,0 +1,18 @@
+﻿//===================================================
+// Copyright(c) Coalition of Good-Hearted Engineers
+// Free To Use
+//===================================================
+
+using Xeptions;
+using System;
+
+namespace Sheenam.Api.Models.Foundations.Guests.Exceptions
+{
+    public class GuestServiceException : Xeption
+    {
+        public GuestServiceException(Xeption innerException)
+            :base(message: "Guest service error occured, contact support",
+                 innerException)
+        {}
+    }
+}
