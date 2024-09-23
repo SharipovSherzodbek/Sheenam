@@ -142,7 +142,7 @@ namespace Sheenam.APi.Tests.Unit.Services.Foundations.Guests
                 broker.LogError(It.Is(SameExceptionAs(
                 expectedGuestValidationException))),
                 Times.Once);
-            
+
             this.storageBrokerMock.Verify(broker =>
                 broker.InsertGuestsAsync(It.IsAny<Guest>()),
                     Times.Never);

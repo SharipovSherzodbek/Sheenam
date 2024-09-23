@@ -4,7 +4,6 @@
 //===================================================
 
 using System;
-using System.Data;
 using System.Text.RegularExpressions;
 using Sheenam.Api.Models.Foundations.Guests;
 using Sheenam.Api.Models.Foundations.Guests.Exceptions;

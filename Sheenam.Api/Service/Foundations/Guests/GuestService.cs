@@ -29,6 +29,6 @@ namespace Sheenam.Api.Service.Foundations.Guests
 
             return await this.storageBroker.InsertGuestsAsync(guest);
         });
-        
+
     }
 }
