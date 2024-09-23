@@ -32,7 +32,7 @@ namespace Sheenam.Api
                 Version = "v1"
             };
 
-             services.AddControllers();
+            services.AddControllers();
             services.AddDbContext<StorageBroker>();
             AddBrokers(services);
             AddFoundationServices(services);
@@ -44,7 +44,7 @@ namespace Sheenam.Api
             });
         }
 
-        
+
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
         {
